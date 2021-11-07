@@ -50,13 +50,14 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 45px 10px;
+    padding: 50% 10px;
     transform: rotate(90deg) scale(0.7);
     transition: 500ms;
 }
 
 .nav.active .logo
 {
+    padding: 25% 0;
     transform: rotate(0) scale(1);
 }
 
