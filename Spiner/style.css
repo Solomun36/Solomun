@@ -1,0 +1,165 @@
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    min-height: 100vh;
+    background: #aaa;
+}
+
+.container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-circle
+{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.share
+{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2.2em;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #eee;
+    background: #287bff;
+    cursor: pointer;
+}
+
+.share::before
+{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: #287bff;
+    border-radius: 50%;
+    z-index: -1;
+    animation: anime 1000ms forwards infinite ease-in-out;
+}
+
+@keyframes anime {
+    0%{
+        transform: scale(1);
+        opacity: .75;
+    }
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.socials
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.soci
+{
+    margin: 0;
+    position: absolute;
+    font-size: 1.8em;
+    width: 50px;
+    height: 50px;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.socials.active
+{
+    z-index: 1;
+}
+
+.socials.active .soci
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.socials.active .soci.s1
+{
+    transform: translate(0,-390%);
+    background-color: #0088cc;
+    transition: 0.5s;
+}
+.socials.active .soci.s2
+{
+    transform: translate(290%,-270%);
+    background-color: #3b5998;
+    transition: 0.5s;
+}
+.socials.active .soci.s3
+{
+    transform: translate(400%,0);
+    background-color: #DB4437;
+    transition: 0.5s;
+}
+.socials.active .soci.s4
+{
+    transform: translate(290%,270%);
+    background-color: #1DA1F2;
+    transition: 0.5s;
+}
+.socials.active .soci.s5
+{
+    transform: translate(0,400%);
+    background-color: #0077b5;
+    transition: 0.5s;
+}
+.socials.active .soci.s6
+{
+    transform: translate(-290%,270%);
+    background-color: #228B22;
+    transition: 0.5s;
+}
+.socials.active .soci.s7
+{
+    transform: translate(-400%,0);
+    background-color: #FF160C;
+    transition: 0.5s;
+}
+.socials.active .soci.s8
+{
+    transform: translate(-290%,-270%);
+    background-color: #1b1b1b;
+    transition: 0.5s;
+}
+
+
+
+

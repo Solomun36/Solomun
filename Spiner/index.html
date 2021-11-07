@@ -4,11 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy()="no-referrer" />
+    <link rel="stylesheet" href="style.css">
     <title>Spiner</title>
 </head>
 <body>
     
+    <div class="container">
+        <div class="main-circle">
+            <span class="share" onclick="show()"><i class="fa fa-share-alt"></i></span>
+            <div class="socials">
+                <span class="soci s1" ><i class="fa fa-telegram" title="Telegram"></i></span>
+                <span class="soci s2" ><i class="fa fa-facebook" title="Facebook"></i></span>
+                <span class="soci s3" ><i class="fa fa-google" title="Google"></i></span>
+                <span class="soci s4" ><i class="fa fa-twitter" title="Twitter"></i></span>
+                <span class="soci s5" ><i class="fa fa-linkedin" title="Linked in"></i></span>
+                <span class="soci s6" ><i class="fa fa-envelope" title="Message"></i></span>
+                <span class="soci s7" ><i class="fa fa-exclamation" title="Information"></i></span>
+                <span class="soci s8" ><i class="fa fa-user" title="Contacts"></i></span>
+            </div>
+        </div>
+    </div>
 
-    
+    <script>
+
+        
+        function show()
+        {
+            let toggle = document.querySelector('.socials');
+            toggle.classList.toggle('active');
+        }
+
+    </script>
+
 </body>
 </html>
