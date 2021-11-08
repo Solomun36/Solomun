@@ -1,0 +1,382 @@
+/**===== Google Fonts =====**/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/**===== Variable CSS =====**/
+:root
+{
+    --header-height: 3rem;
+    --nav-width: 324px;
+
+    /**===== Colors =====**/
+    --dark-clr:#393E46;
+    --darken-clr:#222831;
+    --red-clr:#B91646;
+    --white-clr:#FBF3E4;
+    --cream-clr:#DFD8CA;
+    --text-clr:#716F81;
+    --silver-clr: #C0C0C0;
+
+    /**===== Font Weight =====**/
+    --font-m:500;
+    --font-sb:600;
+    --font-b:700;
+
+    /**===== Font and typography =====**/
+    --body-font:'Poppins', sans-serif;
+    --h1-font-size:1.5rem;
+    --h2-font-size:1.25rem;
+    --h3-font-size:1rem;
+    --normal-font-size:.938rem;
+    --small-font-size:.813rem;
+    --smaller-font-size:.75rem;
+
+    /**===== Margines =====**/
+    --mb-1:.5rem;
+    --mb-2:1rem;
+    --mb-3:1.5rem;
+    --mb-4:2rem;
+    --mb-5:2.5rem;
+
+    /**===== z index =====**/
+    --z-fixed:100;
+}
+
+@media screen and (min-width:768px)
+{
+    :root{
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/**===== Base =====**/
+*,::before,::after
+{
+    box-sizing: border-box;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: var(--header-height) 0 0 0;
+    font-family:  var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-m);
+    background-color: var(--cream-clr);
+    color: var(--text-clr);
+    line-height: 1.6;
+}
+
+h1,h2,h3,p
+{
+    margin: 0;
+}
+
+h3
+{
+    font-weight: var(--font-sb);
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--text-clr);
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/**===== Class CSS ======**/
+.section
+{
+    padding: 4rem 0 2rem;
+}
+
+.section-title
+{
+    font-size: var(--h1-font-size);
+    color: var(--dark-clr);
+    margin-bottom: var(--mb-3);
+    text-align: center;
+}
+
+.section-subtitle
+{
+    display: block;
+    font-size: var(--small-font-size);
+    color: var(--dark-clr);
+    text-align: center;
+    font-size: var(--font-b);
+    margin-bottom: 0.25rem;
+}
+
+/**===== Create Hamburger Menu =====**/
+.toggle
+{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: var(--z-fixed);
+}
+
+.bar
+{
+    width: 2rem;
+    height: 4px;
+    background-color: var(--silver-clr);
+    border-radius: 2px;
+    transition: 0.5s ;
+}
+
+.bar::after,
+.bar::before
+{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 2px;
+    background-color: var(--silver-clr);
+    transition: 0.5s;
+}
+
+.bar::after
+{
+    transform: translateY(-9px);
+}
+.bar::before
+{
+    transform: translateY(9px);
+}
+
+.toggle.active .bar
+{
+    transform: rotate(360deg);
+    background: transparent;
+}
+
+.toggle.active .bar::after
+{
+    transform: rotate(45deg);
+    background-color: var(--red-clr);
+    transition: background-color 0.3s;
+    filter: brightness(150%);
+    opacity: 0.8;
+}
+.toggle.active .bar::before
+{
+    transform:rotate(-45deg);
+    background-color: var(--red-clr);
+    transition: background-color 0.3s;
+    filter: brightness(150%);
+    opacity: 0.8;
+}
+
+/**===== Layout =====**/
+.bd-grid
+{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 1005;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin:0 var(--mb-2) 0 var(--mb-2);
+}
+
+.l-header
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--darken-clr);
+    box-shadow: 0 15px 14px rgba(0, 0, 0, 0.1);
+}
+
+/**===== Nav =====**/
+.nav
+{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo
+{
+    color: var(--silver-clr);
+}
+
+.nav_menu
+{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 90%;
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--darken-clr);
+    transition: 0.5s;
+}
+
+.nav_item
+{
+    margin-bottom: var(--mb-4);
+}
+
+.nav_link
+{
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--silver-clr);
+    font-weight: var(--font-b);
+    transition: 0.3s;
+}
+
+.nav_link:hover
+{
+    color: var(--text-clr);
+}
+
+/**===== Show =====**/
+.show
+{
+    left: 0;
+}
+
+/**===== Active Menu =====**/
+.active
+{
+    color: var(--text-clr);
+}
+
+/**===== Home  =====**/
+.home_container
+{
+    height: calc(100vh - var(--header-height));
+    align-items: center;
+}
+
+.home_data
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    text-align: center;
+}
+
+.home_img img
+{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--mb-2);
+    object-fit: cover;
+}
+
+.home_title
+{
+    font-size: var(--h1-font-size);
+    color: var(--darken-clr);
+    font-weight: var(--font-sb);
+}
+
+.home_profession
+{
+    font-size: var(--small-font-size);
+    color: var(--darken-clr);
+    margin-bottom: var(--mb-5);
+}
+
+.home_social
+{
+    margin-bottom: 5rem;
+}
+
+.home_social-link
+{
+    display: inline-flex;
+    background-color: var(--darken-clr);
+    color: var(--silver-clr);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 0.50rem;
+    margin: 0 var(--mb-1);
+    transition: 0.3s;
+}
+
+.home_social-link:hover
+{
+    background-color: var(--dark-clr);
+    transform: translateY(-5px);
+}
+
+.home_button
+{
+    width: 100%;
+}
+
+/**===== Buttons =====**/
+.button
+{
+    display: inline-block;
+    background-color: var(--darken-clr);
+    color: var(--silver-clr);
+    padding: 1rem 2rem;
+    font-weight: var(--font-sb);
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.button:hover
+{
+    background-color: var(--dark-clr);
+    color: var(--silver-clr);
+}
+
+.button_light
+{
+    background-color: var(--darken-clr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
