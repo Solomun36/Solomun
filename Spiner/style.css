@@ -109,55 +109,71 @@ body
 {
     opacity: 1;
     cursor: pointer;
+    transition: all1s ease-in-out;
 }
 
 .socials.active .soci.s1
 {
     transform: translate(0,-390%);
     background-color: #0088cc;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.1s;
 }
+
 .socials.active .soci.s2
 {
     transform: translate(290%,-270%);
     background-color: #3b5998;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.2s;
 }
+
 .socials.active .soci.s3
 {
     transform: translate(400%,0);
     background-color: #DB4437;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.3s;
 }
+
 .socials.active .soci.s4
 {
     transform: translate(290%,270%);
     background-color: #1DA1F2;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.4s;
 }
+
 .socials.active .soci.s5
 {
     transform: translate(0,400%);
     background-color: #0077b5;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.5s;
 }
+
 .socials.active .soci.s6
 {
     transform: translate(-290%,270%);
-    background-color: #228B22;
-    transition: 0.5s;
+    background-color: #25d366;
+    transition: 0.8s;
+    transition-delay: 0.6s;
 }
+
 .socials.active .soci.s7
 {
     transform: translate(-400%,0);
     background-color: #FF160C;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.7s;
 }
+
 .socials.active .soci.s8
 {
     transform: translate(-290%,-270%);
     background-color: #1b1b1b;
-    transition: 0.5s;
+    transition: 0.8s;
+    transition-delay: 0.8s;
 }
 
 
